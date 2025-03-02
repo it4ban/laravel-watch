@@ -1,15 +1,3 @@
-@php
-    $menuItems = collect([
-        'home' => 'Home',
-        'courses' => 'Courses',
-        'contacts' => 'Contacts',
-        'login' => 'Login',
-        'register' => 'Register',
-        'terms' => 'Terms',
-        'privacy' => 'Privacy',
-    ]);
-@endphp
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,14 +9,14 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
-    <x-header :$menuItems />
+<body class="h-screen flex flex-col">
+    <x-header />
 
-    <main class="h-screen grid place-items-center text-7xl font-bold">
+    <main class="flex-grow">
         {{ $slot }}
     </main>
 
-    <x-footer :$menuItems />
+    <x-footer />
 </body>
 
 </html>
